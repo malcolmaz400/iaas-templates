@@ -9,16 +9,16 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 steps:
+
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'AzureRmPipelineCon'
-    subscriptionId: '501dca37-c84d-4939-96be-b6c113a26721'
+    azureResourceManagerConnection: 'Microsoft Partner Network(1)(1e882adf-c71e-4089-bded-364924fa97cc)'
+    subscriptionId: '1e882adf-c71e-4089-bded-364924fa97cc'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'azurepipeline-rg1'
+    resourceGroupName: 'NetworkWatcherRG'
     location: 'West Europe'
     templateLocation: 'Linked artifact'
     csmFile: 'CreateWebApp/file.json'
-    overrideParameters: -webAppName minlwlw123 
+    overrideParameters: '-webAppName minlwlw123'
     deploymentMode: 'Incremental'
-    deploymentName: 'davesDeployment'
